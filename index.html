@@ -277,6 +277,10 @@
                 font-size: 0.875rem;
             }
         }
+
+        .analysis-text {
+            font-family: "Times New Roman", Times, serif;
+        }
     </style>
 </head>
 <body class="bg-gray-100 p-4 md:p-8 font-lato">
@@ -351,41 +355,164 @@
                 <div class="text-xl sm:text-2xl md:text-3xl font-bold">10</div>
             </div>
             <div class="bg-green-500 text-white p-3 rounded-lg">
-                <div class="text-xs sm:text-sm">Jumlah Lulus</div>
+                <div class="text-xs sm:text-sm">Jumlah Mahasiswa Lulus</div>
                 <div class="text-xl sm:text-2xl md:text-3xl font-bold">6</div>
             </div>
             <div class="bg-purple-500 text-white p-3 rounded-lg">
-                <div class="text-xs sm:text-sm">Rata-rata UTS</div>
+                <div class="text-xs sm:text-sm">Rata-rata Nilai UTS</div>
                 <div class="text-xl sm:text-2xl md:text-3xl font-bold">57.30</div>
             </div>
             <div class="bg-purple-500 text-white p-3 rounded-lg">
-                <div class="text-xs sm:text-sm">Rata-rata UAS</div>
+                <div class="text-xs sm:text-sm">Rata-rata Nilai UAS</div>
                 <div class="text-xl sm:text-2xl md:text-3xl font-bold">56.10</div>
             </div>
         </div>
         
-        <div class="bg-white p-3 md:p-6 rounded-lg shadow mb-6">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Nilai Quiz, Tugas, UTS, UAS</h2>
-            <div class="overflow-x-auto">
+        <div class="grid grid-cols-1 gap-6">
+            <!-- All Nilai Chart Section -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-center mb-4">Perbandingan Nilai Quiz, Tugas, UTS, dan UAS</h2>
                 <div id="allNilaiChart"></div>
+                <div class="mt-6 prose max-w-none analysis-text">
+                    <h2 class="text-xl font-bold mb-4">Analisis Komprehensif Perbandingan Nilai</h2>
+                    <h3 class="text-lg font-semibold mb-2">Analisis Statistik</h3>
+                    <p class="mb-4">Berdasarkan grafik yang ditampilkan, dapat disimpulkan beberapa poin penting terkait nilai mahasiswa:</p>
+
+                    <div class="mb-4">
+                        <p class="font-semibold">Nilai Quiz:</p>
+                        <ul class="list-disc ml-6">
+                            <li>Nilai tertinggi: 87 (NIM: 613120058)</li>
+                            <li>Nilai terendah: 30 (NIM: 613120057)</li>
+                            <li>Rata-rata nilai Quiz: 52.8</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="font-semibold">Nilai UTS:</p>
+                        <ul class="list-disc ml-6">
+                            <li>Nilai tertinggi: 89 (NIM: 613120067)</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="font-semibold">Nilai UAS:</p>
+                        <ul class="list-disc ml-6">
+                            <li>Nilai tertinggi: 87 (NIM: 613120067)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-lg font-semibold mb-2">Tren dan Pola Performa</h3>
+                    <ul class="list-disc ml-6">
+                        <li>40% mahasiswa menunjukkan peningkatan nilai yang konsisten dari Quiz ke UAS</li>
+                        <li>30% mahasiswa mengalami penurunan performa pada UAS dibandingkan UTS</li>
+                        <li>30% mahasiswa menunjukkan performa fluktuatif antara Quiz, UTS, dan UAS</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div class="bg-white p-3 md:p-6 rounded-lg shadow mb-6">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Jumlah Mahasiswa Lulus</h2>
-            <div id="pieChart"></div>
-        </div>
+            <!-- Pie Chart Section -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-center mb-4">Distribusi Kelulusan Mahasiswa</h2>
+                <div id="pieChart"></div>
+                <div class="mt-6 prose max-w-none analysis-text">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">Analisis Distribusi Kelulusan</h3>
+                    <h4 class="text-md font-semibold mb-2">Distribusi Nilai Akhir</h4>
+                    <p class="mb-4">Berdasarkan data nilai mahasiswa, patokan nilai kelulusan ditetapkan sebesar 50. Dari total 10 mahasiswa, distribusi kelulusan adalah sebagai berikut:</p>
 
-        <div class="bg-white p-3 md:p-6 rounded-lg shadow mb-6">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Nilai UTS dan UAS</h2>
-            <div class="overflow-x-auto">
+                    <ul class="list-disc ml-6 mb-4">
+                        <li>Lulus (≥ 50): 6 mahasiswa (60%)</li>
+                        <li>Tidak Lulus (< 50): 4 mahasiswa (40%)</li>
+                    </ul>
+
+                    <h4 class="text-md font-semibold mb-2">Rincian Nilai Mahasiswa</h4>
+                    <div class="overflow-x-auto mb-4">
+                        <table class="min-w-full border-collapse border border-gray-300">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="border border-gray-300 px-4 py-2">Keterangan</th>
+                                    <th class="border border-gray-300 px-4 py-2">Jumlah Mahasiswa</th>
+                                    <th class="border border-gray-300 px-4 py-2">NIM</th>
+                                    <th class="border border-gray-300 px-4 py-2">Nilai Akhir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-2">Mahasiswa Lulus</td>
+                                    <td class="border border-gray-300 px-4 py-2">6 mahasiswa</td>
+                                    <td class="border border-gray-300 px-4 py-2">613091003, 613120057, 613090071, 613120058, 613120067, 613120044</td>
+                                    <td class="border border-gray-300 px-4 py-2">52.2 - 80.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-2">Mahasiswa Tidak Lulus</td>
+                                    <td class="border border-gray-300 px-4 py-2">4 mahasiswa</td>
+                                    <td class="border border-gray-300 px-4 py-2">613120059, 613120050, 613120100, 613120048</td>
+                                    <td class="border border-gray-300 px-4 py-2">38.9 - 49.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="text-md font-semibold mb-2">Analisis Kelulusan</h4>
+                    <ul class="list-disc ml-6">
+                        <li>30% mahasiswa berhasil memperoleh nilai akhir di atas 70, menunjukkan performa akademik yang sangat baik.</li>
+                        <li>40% mahasiswa berada dalam rentang nilai 50-69, yang menunjukkan performa cukup baik namun masih memerlukan peningkatan.</li>
+                        <li>30% mahasiswa memperoleh nilai akhir di bawah 50, yang artinya tidak lulus.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Column Chart Section -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-center mb-4">Perbandingan Nilai UTS dan UAS Mahasiswa</h2>
                 <div id="nilaiChart"></div>
-            </div>
-        </div>
+                <div class="mt-6 prose max-w-none analysis-text">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">Analisis Perbandingan UTS dan UAS</h3>
+                    <h4 class="text-md font-semibold mb-2">1. Analisis Komparatif</h4>
+                    <p class="mb-4">Berdasarkan data nilai mahasiswa:</p>
+                    <ul class="list-disc ml-6 mb-4">
+                        <li>Rata-rata nilai UTS: 57.3</li>
+                        <li>Rata-rata nilai UAS: 56.1</li>
+                        <li>Selisih rata-rata: 1.2 poin</li>
+                    </ul>
+                    <p class="mb-4">Meskipun rata-rata nilai UAS sedikit lebih rendah dibandingkan UTS, perbedaannya masih kecil dan menunjukkan adanya stabilitas performa di antara kedua ujian.</p>
 
-        <div class="overflow-x-auto bg-white rounded-lg shadow mb-6">
-            <div class="p-3 md:p-6">
-                <h2 class="text-lg md:text-2xl font-bold text-gray-800 mb-4 text-center">DATA NILAI MAHASISWA</h2>
+                    <h4 class="text-md font-semibold mb-2">2. Pola Performa Mahasiswa</h4>
+                    <p class="mb-4">Dari perbandingan nilai UTS dan UAS, ditemukan tiga pola performa mahasiswa:</p>
+
+                    <div class="ml-6">
+                        <h5 class="font-semibold mb-2">Mahasiswa dengan peningkatan nilai:</h5>
+                        <ul class="list-disc ml-6 mb-4">
+                            <li>Sebanyak 4 mahasiswa mengalami peningkatan nilai dari UTS ke UAS.</li>
+                            <li>Contoh:
+                                <ul class="list-circle ml-6">
+                                    <li>NIM 613091003: UTS (56) → UAS (78)</li>
+                                    <li>NIM 613120044: UTS (46) → UAS (67)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h5 class="font-semibold mb-2">Mahasiswa dengan penurunan nilai:</h5>
+                        <ul class="list-disc ml-6 mb-4">
+                            <li>Sebanyak 5 mahasiswa mengalami penurunan nilai dari UTS ke UAS.</li>
+                            <li>Contoh:
+                                <ul class="list-circle ml-6">
+                                    <li>NIM 613120057: UTS (64) → UAS (45)</li>
+                                    <li>NIM 613090071: UTS (67) → UAS (35)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h5 class="font-semibold mb-2">Mahasiswa dengan nilai stabil:</h5>
+                        <ul class="list-disc ml-6">
+                            <li>1 mahasiswa mempertahankan nilai yang relatif stabil antara UTS dan UAS.</li>
+                            <li>Contoh: NIM 613120100: UTS (46) → UAS (46)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-3 md:p-6 rounded-lg shadow mb-6">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">DATA NILAI MAHASISWA</h2>
                 <div class="table-container">
                     <table class="responsive-table">
                         <thead>
@@ -494,7 +621,6 @@
                     </table>
                 </div>
             </div>
-        </div>
 
         <script>
             // Data untuk grafik
